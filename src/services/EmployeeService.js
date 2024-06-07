@@ -21,6 +21,14 @@ export class EmployeeService{
         }
     }
 
+    async updateEmployee({id, name, salary}){
+        try {
+            await axios.patch(`/employees/update/${id}/${name}/${salary}`)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     
     async deleteEmployee({id}){
         try {
